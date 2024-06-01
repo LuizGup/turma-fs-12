@@ -1,11 +1,26 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
 
 import "./app.scss";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Usuarios from "./pages/Usuarios";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <div>Hello world!</div>,
+//   },
+//   {
+//     path: "/usuarios",
+//     element: <Usuarios />,
+//   },
+// ]);
+const root = ReactDOM.createRoot(document.getElementById("root")!);
+
+root.render(
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<div>Hello world!</div>} />
+      <Route path="/usuarios" element={<Usuarios />} />
+    </Routes>
+  </BrowserRouter>
 );
